@@ -10,3 +10,5 @@ The file "UAV_ctrl_test_param.py" determines the testing accuracy, precision, re
 The file "UAV_ctrl_program.py" takes a video output from a camera and utilizes one of the models to predict an output from a gesture made in front of the camera. Afterwards, it issues the corresponding command for the quadcopter.
 
 To run this program: first compile one of the neural network models. Then, determine the testing parameters using "UAV_ctrl_model.py". Finally, execute "UAV_ctrl_test_param.py". The computer must have a camera. For better results, use a white background for the gestures. Only the hand performing the gestures must be visible to the camera. 
+
+The models must be trained using the "Sign Language MNIST" dataset, availeble in: https://www.kaggle.com/datamunge/sign-language-mnist?select=sign_mnist_test. The file "amer_sign2.png", obtained from the dataset, includes the different letters of the sign language alphabet. The model takes the letters F, Y, C, G, V and W. The respective commands are "Forward", "Backward", "Left", "Right", "Up" and "Down". When no sign or an unrecognized sign is detected, the output of the model shall be "NC" or "Not a Command".
